@@ -11,5 +11,11 @@
 echo "deb [signed-by=/usr/share/keyrings/islands-archive-keyring.gpg arch=amd64] https://ian-miller-gz.github.io/islands-apt stable main" | sudo tee /etc/apt/sources.list.d/islands.list
 sudo apt update
 sudo apt install islands</pre>
+<h1>Islands pacman</h1>
+<pre>curl -fsSL https://ian-miller-gz.github.io/islands-apt/islands-archive-keyring.gpg -o /tmp/islands-archive-keyring.gpg
+sudo pacman-key --add /tmp/islands-archive-keyring.gpg
+sudo pacman-key --lsign-key CA2AC1FB65D6629F
+printf '[islands]\nSigLevel = Required DatabaseOptional\nServer = https://ian-miller-gz.github.io/islands-apt/arch\n' | sudo tee -a /etc/pacman.conf
+sudo pacman -Sy islands</pre>
 </body>
 </html>
