@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Islands apt</title>
+<title>Islands packages</title>
 <style>body{font-family:sans-serif;max-width:52em;margin:3em auto;padding:0 1em}pre{background:#f4f4f4;padding:1em;overflow:auto}</style>
 </head>
 <body>
 <h1>Islands apt</h1>
-<pre>sudo curl -fsSL https://ian-miller-gz.github.io/islands-apt/islands-archive-keyring.gpg -o /usr/share/keyrings/islands-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/islands-archive-keyring.gpg arch=amd64] https://ian-miller-gz.github.io/islands-apt stable main" | sudo tee /etc/apt/sources.list.d/islands.list
+<pre>sudo curl -fsSL https://ian-miller-gz.github.io/islands-packages/islands.gpg -o /usr/share/keyrings/islands.gpg
+echo "deb [signed-by=/usr/share/keyrings/islands.gpg arch=amd64] https://ian-miller-gz.github.io/islands-packages stable main" | sudo tee /etc/apt/sources.list.d/islands.list
 sudo apt update
 sudo apt install islands</pre>
 <h1>Islands pacman</h1>
-<pre>curl -fsSL https://ian-miller-gz.github.io/islands-apt/islands-archive-keyring.gpg -o /tmp/islands-archive-keyring.gpg
-sudo pacman-key --add /tmp/islands-archive-keyring.gpg
+<pre>curl -fsSL https://ian-miller-gz.github.io/islands-packages/islands.gpg -o /tmp/islands.gpg
+sudo pacman-key --add /tmp/islands.gpg
 sudo pacman-key --lsign-key CA2AC1FB65D6629F
-printf '[islands]\nSigLevel = Required DatabaseOptional\nServer = https://ian-miller-gz.github.io/islands-apt/arch\n' | sudo tee -a /etc/pacman.conf
+printf '[islands]\nSigLevel = Required DatabaseOptional\nServer = https://ian-miller-gz.github.io/islands-packages/arch\n' | sudo tee -a /etc/pacman.conf
 sudo pacman -Sy islands</pre>
 </body>
 </html>
