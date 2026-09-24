@@ -8,14 +8,14 @@
 <body>
 <h1>Islands apt</h1>
 <pre>sudo curl -fsSL https://ian-miller-gz.github.io/islands-packages/islands.gpg -o /usr/share/keyrings/islands.gpg
-echo "deb [signed-by=/usr/share/keyrings/islands.gpg arch=amd64] https://ian-miller-gz.github.io/islands-packages stable main" | sudo tee /etc/apt/sources.list.d/islands.list
+echo "deb [signed-by=/usr/share/keyrings/islands.gpg arch=amd64] https://ian-miller-gz.github.io/islands-packages/apt stable main" | sudo tee /etc/apt/sources.list.d/islands.list
 sudo apt update
 sudo apt install islands</pre>
 <h1>Islands pacman</h1>
 <pre>curl -fsSL https://ian-miller-gz.github.io/islands-packages/islands.gpg -o /tmp/islands.gpg
 sudo pacman-key --add /tmp/islands.gpg
 sudo pacman-key --lsign-key CA2AC1FB65D6629F
-printf '[islands]\nSigLevel = Required DatabaseOptional\nServer = https://ian-miller-gz.github.io/islands-packages/arch\n' | sudo tee -a /etc/pacman.conf
+printf '[islands]\nSigLevel = Required DatabaseOptional\nServer = https://ian-miller-gz.github.io/islands-packages/pacman\n' | sudo tee -a /etc/pacman.conf
 sudo pacman -Sy islands</pre>
 <h1>Islands brew</h1>
 <pre>brew tap ian-miller-gz/islands https://github.com/ian-miller-gz/islands-packages
