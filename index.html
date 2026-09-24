@@ -17,5 +17,8 @@ sudo pacman-key --add /tmp/islands.gpg
 sudo pacman-key --lsign-key CA2AC1FB65D6629F
 printf '[islands]\nSigLevel = Required DatabaseOptional\nServer = https://ian-miller-gz.github.io/islands-packages/arch\n' | sudo tee -a /etc/pacman.conf
 sudo pacman -Sy islands</pre>
+<h1>Islands brew</h1>
+<pre>brew tap ian-miller-gz/islands https://github.com/ian-miller-gz/islands-packages
+brew install islands</pre>
 </body>
 </html>
